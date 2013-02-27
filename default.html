@@ -14,6 +14,10 @@
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"/>
     <link href="/common/css/common.css" rel="stylesheet"/>
+    <link href="/css/local.css" rel="stylesheet"/>
+
+    <!-- Le jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -25,11 +29,11 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="/"><i class="icon-beaker"></i> Socrata Labs</a>
+          <a class="brand{% if site.subsite == 'labs' %} active{% endif %}" href="http://labs.socrata.com"><i class="icon-beaker"></i> Socrata Labs</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="http://dev.socrata.com">Developers</a></li>
+              <li{% if site.subsite == 'dev' %} class="active"{% endif %}><a href="http://dev.socrata.com">Developers</a></li>
+              <li{% if site.subsite == 'hiab' %} class="active"{% endif %}><a href="http://hackathon-in-a-box.org">Hackathon-in-a-Box</a></li>
               <li><a href="http://www.socrata.com">www.socrata.com</a></li>
             </ul>
           </div><!--/.nav-collapse -->
