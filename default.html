@@ -32,6 +32,7 @@
           <a class="brand{% if site.subsite == 'labs' %} active{% endif %}" href="http://labs.socrata.com"><i class="icon-beaker"></i> Socrata Labs</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
+              <li{% if page.blog == true %} class="active"{% endif %}><a href="http://labs.socrata.com/blog/">Blog</a></li>
               <li{% if site.subsite == 'dev' %} class="active"{% endif %}><a href="http://dev.socrata.com">Developers</a></li>
               <li{% if site.subsite == 'hiab' %} class="active"{% endif %}><a href="http://hackathon-in-a-box.org">Hackathon-in-a-Box</a></li>
               <li><a href="http://www.socrata.com">www.socrata.com</a></li>
