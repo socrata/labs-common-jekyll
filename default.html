@@ -63,9 +63,10 @@
                   <li class="divider"></li>
                   <li><a href="{{ hiab_domain }}/getting-started/">Getting Started</a></li>
                   <li><a href="{{ hiab_domain }}/guide/">The Hackathon Guide</a></li>
-                  <li><a href="{{ hiab_domain }}/resources/">Resources</a></li>
+                  <li><a href="{{ hiab_domain }}/open-data-apis/">Creating Open Data APIs</a></li>
+                  {% comment %}<li><a href="{{ hiab_domain }}/resources/">Resources</a></li>{% endcomment %}
                   <li class="divider"></li>
-                  <li><a href="{{ hiab_domain }}/support/">Professional Support</a></li>
+                  <li><a href="{{ hiab_domain }}/contact-us/">Contact Us</a></li>
                 </ul>
               </li>
               <li><a href="http://www.socrata.com">www.socrata.com</a></li>
@@ -81,8 +82,12 @@
 
       <hr>
 
-      <footer>
-        <p>&copy; Socrata, Inc. 2013</p>
+      <footer class="muted">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
+          <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" />
+        </a>
+
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">{{ site.subsite_name }}</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.socrata.com" property="cc:attributionName" rel="cc:attributionURL">Socrata</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Want to contribute? <a href="{{ site.github_repo }}" target="_blank">Fork this site</a> and submit a pull request.
       </footer>
 
     </div> <!-- /container -->
