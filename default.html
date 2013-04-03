@@ -47,7 +47,7 @@
           <a class="brand labs" href="{{ labs_domain }}/"><i class="icon-beaker" /></i> Socrata Labs</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>
+              {% comment %}<li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>{% endcomment %}
               <li class="opensource dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ opensource_domain }}">Open Source <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -61,14 +61,14 @@
               <li class="dev dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ dev_domain }}">Developers <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{ dev_domain }}/"><i class="icon-heart"></i> Home</a></li>
+                  <li><a href="{{ dev_domain }}/"><i class="icon-home"></i> Home</a></li>
                   <li><a href="{{ dev_domain }}/authentication/">Authentication and App Tokens</a></li>
                   <li><a href="{{ dev_domain }}/support/">Getting Support</a></li>
                   <li class="divider"></li>
-                  <li class="nav-header">Data Consumers</li>
+                  <li class="nav-header"><i class="icon-cogs"></i> Data Consumers</li>
                   <li><a href="{{ dev_domain }}/consumers/getting-started/">Getting Started</a></li>
                   <li class="divider"></li>
-                  <li class="nav-header">Publishers</li>
+                  <li class="nav-header"><i class="icon-cloud-upload"></i> Publishers</li>
                   <li><a href="{{ dev_domain }}/publishers/getting-started/">Getting Started</a></li>
                   <li><a href="{{ dev_domain }}/publishers/importing">Importing and Updating Datasets</a></li>
                 </ul>
@@ -76,7 +76,7 @@
               <li class="hiab dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ hiab_domain }}/">Hackathon-in-a-Box <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{ hiab_domain }}/">Home</a></li>
+                  <li><a href="{{ hiab_domain }}/"><i class="icon-home"></i> Home</a></li>
                   <li class="divider"></li>
                   <li><a href="{{ hiab_domain }}/getting-started/">Getting Started</a></li>
                   <li><a href="{{ hiab_domain }}/guide/">The Hackathon Guide</a></li>
