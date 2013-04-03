@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% if page.title %} {{ page.title }} | {% endif %}Socrata Labs</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %} {% if site.subsite_name %}{{ site.subsite_name }} | {% endif %}Socrata Labs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,10 +28,12 @@
   {% assign labs_domain = 'http://labs.socrata.com' %}
   {% assign dev_domain = 'http://dev.socrata.com' %}
   {% assign hiab_domain = 'http://hackathon-in-a-box.org' %}
+  {% assign opensource_domain = 'http://open-source.socrata.com' %}
   {% case site.subsite %}
     {% when 'labs' %}{% assign labs_domain = '' %}
     {% when 'dev' %}{% assign dev_domain = '' %}
     {% when 'hiab' %}{% assign hiab_domain = '' %}
+    {% when 'opensource' %}{% assign opensource_domain = '' %}
   {% endcase %}
 
   <body>
@@ -42,10 +44,20 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>
+              <li class="opensource dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ opensource_domain }}">Open Source <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ opensource_domain }}/"><i class="icon-home"></i> Home</a></li>
+                  <li class="divider"></li>
+                  <li><a href="{{ opensource_domain }}/philosophy/"><i class="icon-heart"></i> Open Source Philosophy</a></li>
+                  <li><a href="{{ opensource_domain }}/architecture/"><i class="icon-sitemap"></i> Architecture and Roadmap</a></li>
+                  <li><a href="{{ opensource_domain }}/the-code/"><i class="icon-download-alt"></i> Building and Contributing</a></li>
+                </ul>
+              </li>
               <li class="dev dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ dev_domain }}">Developers <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{ dev_domain }}/">Home</a></li>
+                  <li><a href="{{ dev_domain }}/"><i class="icon-heart"></i> Home</a></li>
                   <li class="divider"></li>
                   <li class="nav-header">Data Consumers</li>
                   <li><a href="{{ dev_domain }}/consumers/getting-started/">Getting Started</a></li>
@@ -87,7 +99,8 @@
           <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" />
         </a>
 
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">{{ site.subsite_name }}</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.socrata.com" property="cc:attributionName" rel="cc:attributionURL">Socrata</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Want to contribute? <a href="{{ site.github_repo }}" target="_blank">Fork this site</a> and submit a pull request.
+        The content of this <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.socrata.com" property="cc:attributionName" rel="cc:attributionURL">Socrata</a>
+        website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Want to contribute? <a href="{{ site.github_repo }}" target="_blank">Fork this site</a> and submit a pull request.
       </footer>
 
     </div> <!-- /container -->
