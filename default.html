@@ -48,7 +48,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               {% comment %}<li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>{% endcomment %}
-              <li class="opensource dropdown">
+              {% comment %}<li class="opensource dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ opensource_domain }}">Open Source <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ opensource_domain }}/"><i class="icon-home"></i> Home</a></li>
@@ -57,13 +57,13 @@
                   <li><a href="{{ opensource_domain }}/architecture/"><i class="icon-sitemap"></i> Architecture and Roadmap</a></li>
                   <li><a href="{{ opensource_domain }}/the-code/"><i class="icon-download-alt"></i> Building and Contributing</a></li>
                 </ul>
-              </li>
+              </li>{% endcomment %}
               <li class="dev dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ dev_domain }}">Developers <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ dev_domain }}/"><i class="icon-home"></i> Home</a></li>
                   <li><a href="{{ dev_domain }}/authentication/">Authentication and App Tokens</a></li>
-                  <li><a href="{{ dev_domain }}/support/">Getting Support</a></li>
+                  {% comment %}<li><a href="{{ dev_domain }}/support/">Getting Support</a></li>{% endcomment %}
                   <li class="divider"></li>
                   <li class="nav-header"><i class="icon-cogs"></i> Data Consumers</li>
                   <li><a href="{{ dev_domain }}/consumers/getting-started/">Getting Started</a></li>
