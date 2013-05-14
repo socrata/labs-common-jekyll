@@ -48,7 +48,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               {% comment %}<li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>{% endcomment %}
-              {% comment %}<li class="opensource dropdown">
+              <li class="opensource dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ opensource_domain }}">Open Source <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ opensource_domain }}/"><i class="icon-home"></i> Home</a></li>
@@ -57,7 +57,7 @@
                   <li><a href="{{ opensource_domain }}/architecture/"><i class="icon-sitemap"></i> Architecture and Roadmap</a></li>
                   <li><a href="{{ opensource_domain }}/the-code/"><i class="icon-download-alt"></i> Building and Contributing</a></li>
                 </ul>
-              </li>{% endcomment %}
+              </li>
               <li class="dev dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ dev_domain }}">Developers <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -82,10 +82,16 @@
                   <li><a href="{{ hiab_domain }}/guide/">The Hackathon Guide</a></li>
                   <li><a href="{{ hiab_domain }}/open-data-apis/">Creating Open Data APIs</a></li>
                   <li class="divider"></li>
+                  <li><a href="https://communities.socrata.com/">Socrata Community Data Platform</a></li>
+                  <li class="divider"></li>
                   <li><a href="{{ hiab_domain }}/contact-us/">Contact Us</a></li>
                 </ul>
               </li>
               <li><a href="http://www.socrata.com">www.socrata.com</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="https://twitter.com/share" class="twitter-share-button" data-related="socrata" data-lang="en" data-size="large" data-count="none"><i class="icon-twitter"></i> Tweet This</a></li>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
