@@ -45,8 +45,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner {{ site.subsite }}">
         <div class="container">
-          <a class="brand labs" href="{{ labs_domain }}/"><i class="icon-beaker" /></i> Socrata Labs</a>
           <div class="nav-collapse collapse">
+            <a class="brand {{ site.subsite }}" href="/"><i class="icon-cogs"></i> {{ site.title}}</a>
             <ul class="nav">
               {% comment %}<li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>{% endcomment %}
               <li class="opensource dropdown">
@@ -89,6 +89,7 @@
                   <li><a href="{{ hiab_domain }}/contact-us/">Contact Us</a></li>
                 </ul>
               </li>
+              <li><a href="http://communities.socrata.com">Community Data Portals</a></li>
               <li><a href="http://www.socrata.com">www.socrata.com</a></li>
             </ul>
             <ul class="nav pull-right">
