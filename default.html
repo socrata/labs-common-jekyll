@@ -7,22 +7,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="/common/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/common/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <!-- Le Bootstrap-->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+
     <!-- Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome -->
-    <link href="/common/css/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+
+    <!-- Google Web Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"/>
+
+    <!-- Highlight.js -->
+    <script src="/common/js/highlight.js/highlight.pack.js"></script>
     <link rel="stylesheet" href="/common/js/highlight.js/styles/github.css" />
+
+    <!-- CSS customizations -->
     <link href="/common/css/common.css" rel="stylesheet"/>
     <link href="/css/local.css" rel="stylesheet"/>
 
     <!-- Le jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-    <!-- Code Highlighter -->
-    <script src="/common/js/highlight.js/highlight.pack.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
     <!-- Humane date plugin -->
     <script type="text/javascript" charset="utf-8" src="/common/js/humane.js"></script>
@@ -31,6 +35,13 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Browser Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/common/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/common/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/common/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/common/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="/common/ico/favicon.png"/>
   </head>
 
   {% assign labs_domain = 'http://labs.socrata.com' %}
@@ -45,70 +56,53 @@
   {% endcase %}
 
   <body class="{{ site.subsite }} {{ page.bodyclass }}">
+
+    <!-- Header Nav -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner {{ site.subsite }}">
-        <div class="container">
+        <div class="container-fluid">
+          <!-- Responsive navbar button -->
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Current Site -->
+          <a class="brand {{ site.subsite }}" href="/"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
+
           <div class="nav-collapse collapse">
-            <a class="brand {{ site.subsite }}" href="/"><i class="icon-cogs"></i> {{ site.title}}</a>
+            <!-- Right side nav -->
+            <form class="navbar-form pull-right search-form" action="/search.html" method="GET">
+              <input name="q" class="span2" type="text" placeholder="Search">
+              <!-- <button type="submit" class="btn">Search</button> -->
+            </form>
+
+            <!-- Nav elements -->
             <ul class="nav">
-              {% comment %}<li class="blog"><a href="{{ labs_domain }}/blog/">Blog</a></li>{% endcomment %}
-              <li class="opensource dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ opensource_domain }}">Open Source <b class="caret"></b></a>
+              {% include local-nav.html %}
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-beaker"></i> Socrata Labs Network <i class="icon-caret-down"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{ opensource_domain }}/"><i class="icon-home"></i> Home</a></li>
-                  <li class="divider"></li>
-                  <li><a href="{{ opensource_domain }}/philosophy/"><i class="icon-heart"></i> Open Source Philosophy</a></li>
-                  <li><a href="{{ opensource_domain }}/architecture/"><i class="icon-sitemap"></i> Software Architecture</a></li>
-                  <li><a href="{{ opensource_domain }}/roadmap/"><i class="icon-road"></i> Development Roadmap</a></li>
-                  <li><a href="{{ opensource_domain }}/the-code/"><i class="icon-download-alt"></i> Building and Contributing</a></li>
-                </ul>
+                  <li><a href="http://open-source.socrata.com"><i class="icon-heart"></i> Open Source</a></li>
+                  <li><a href="http://dev.socrata.com"><i class="icon-code"></i> Developers</a></li> 
+                  <li><a href="http://hackathon-in-a-box.org"><i class="icon-dropbox"></i> Hackathon-in-a-Box </a></li>
+                  <li><a href="http://communities.socrata.com"><i class="icon-group"></i> Community Data Portals</a></li>
+                  <li><a href="http://www.socrata.com"><i class="icon-external-link"></i> www.socrata.com</a></li>
+                <ul>
               </li>
-              <li class="dev dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ dev_domain }}">Developers <b class="caret"></b></a> 
-                <ul class="dropdown-menu">
-                  <li><a href="{{ dev_domain }}/"><i class="icon-home"></i> Home</a></li>
-                  <li><a href="{{ dev_domain }}/authentication/">Authentication and App Tokens</a></li>
-                  {% comment %}<li><a href="{{ dev_domain }}/support/">Getting Support</a></li>{% endcomment %}
-                  <li class="divider"></li>
-                  <li class="nav-header"><i class="icon-cogs"></i> Data Consumers</li>
-                  <li><a href="{{ dev_domain }}/consumers/getting-started/">Getting Started</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header"><i class="icon-cloud-upload"></i> Publishers</li>
-                  <li><a href="{{ dev_domain }}/publishers/getting-started/">Getting Started</a></li>
-                  <li><a href="{{ dev_domain }}/publishers/importing">Importing and Updating Datasets</a></li>
-                </ul>
-              </li>
-              <li class="hiab dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ hiab_domain }}/">Hackathon-in-a-Box <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{ hiab_domain }}/"><i class="icon-home"></i> Home</a></li>
-                  <li class="divider"></li>
-                  <li><a href="{{ hiab_domain }}/getting-started/">Getting Started</a></li>
-                  <li><a href="{{ hiab_domain }}/guide/">The Hackathon Guide</a></li>
-                  <li><a href="{{ hiab_domain }}/open-data-apis/">Creating Open Data APIs</a></li>
-                  <li class="divider"></li>
-                  <li><a href="https://communities.socrata.com/">Socrata Community Data Platform</a></li>
-                  <li class="divider"></li>
-                  <li><a href="{{ hiab_domain }}/contact-us/">Contact Us</a></li>
-                </ul>
-              </li>
-              <li><a href="http://communities.socrata.com">Community Data Portals</a></li>
-              <li><a href="http://www.socrata.com">www.socrata.com</a></li>
             </ul>
-            <ul class="nav pull-right">
-              <li><a href="https://twitter.com/share" class="twitter-share-button" data-related="socrata" data-lang="en" data-size="large" data-count="none"><i class="icon-twitter"></i> Tweet This</a></li>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </ul>
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div class="container content">
+    <div class="container-fluid content">
 
       {{content}}
 
-      <hr>
+      <hr />
 
       <footer class="muted">
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
@@ -118,9 +112,9 @@
         The content of this <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.socrata.com" property="cc:attributionName" rel="cc:attributionURL">Socrata</a>
         website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Want to contribute? <a href="{{ site.github_repo }}" target="_blank">Fork this site</a> and submit a pull request.
       </footer>
-
     </div> <!-- /container -->
 
+    <!-- Bootstrap Javascript -->
     <script src="/common/js/bootstrap/bootstrap.min.js"></script>
 
     <!-- Google Analytics -->
