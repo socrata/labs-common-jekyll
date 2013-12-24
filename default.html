@@ -111,6 +111,12 @@
         </ul>
       {% endif %}
 
+      {% if site.splash %}
+        <div class="splash">
+          {% include splash.html %}
+        </div>
+      {% endif %}
+
       {{content}}
 
       <hr />
@@ -139,6 +145,23 @@
          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+     </script>
+     
+     <!-- Zendesk -->
+     <script type="text/javascript" src="//asset0.zendesk.com/external/zenbox/v2.1/zenbox.js"></script>
+     <style type="text/css" media="screen, projection">
+       @import url(//asset0.zendesk.com/external/zenbox/v2.1/zenbox.css);
+     </style>
+     <script type="text/javascript">
+       if (typeof(Zenbox) !== "undefined") {
+         Zenbox.init({
+           dropboxID:   "15859",
+           url:         "https://socrata.zendesk.com",
+           tabID:       "support",
+           tabColor:    "#333333",
+           tabPosition: "Right"
+         });
+       }
      </script>
   </body>
 </html>
