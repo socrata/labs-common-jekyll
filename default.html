@@ -22,9 +22,9 @@
     <!-- <link rel="stylesheet" href="/common/js/highlight.js/styles/github.css" /> -->
 
     <!-- CSS customizations -->
-    <link href="/common/css/common.css" rel="stylesheet"/>
-    <link href="/common/css/murphy.css" rel="stylesheet"/>
-    <link href="/css/local.css" rel="stylesheet"/>
+    <link href="{{ site.root }}/common/css/common.css" rel="stylesheet"/>
+    <link href="{{ site.root }}/common/css/murphy.css" rel="stylesheet"/>
+    <link href="{{ site.root }}/css/local.css" rel="stylesheet"/>
 
     <!-- Le jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -65,7 +65,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top {{ site.subsite }}">
       <!-- Current Site -->
       <div class="navbar-header">
-        <a class="navbar-brand {{ site.subsite }}" href="/"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
+        <a class="navbar-brand {{ site.subsite }}" href="{{ site.root }}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -75,7 +75,7 @@
 
       <div class="navbar-header nav-collapse navbar-right">
         <!-- Right side nav -->
-        <form class="navbar-form navbar-right" action="/search.html" method="GET">
+        <form class="navbar-form navbar-right" action="{{ site.root }}/search.html" method="GET">
           <input name="q" class="form-control" type="text" placeholder="Search">
         </form>
       </div>
