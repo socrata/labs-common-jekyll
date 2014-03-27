@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h1 class="text-center">You look lost...</h1>
+
+<img class="center-block" src="http://openclipart.org/image/400px/svg_to_png/23368/papapishu_anteater_2.png">
+
+<p class="text-center">Perhaps <a class="search" href="#">this search</a> will get you closer?</p>
+
+
+<script type="text/javascript">
+  // Lame, I know, but it's just a 404 page
+  $(".search").attr("href", "/search.html?q=" + window.location.pathname.replace(/^\//, "").replace(/\.html/, "").split(/[.-\/]/).join("+"));
+</script>
