@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le Bootstrap-->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome by Dave Gandy - http://fontawesome.io/ -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
@@ -47,40 +47,31 @@
   <body class="{{ site.subsite }} {{ page.bodyclass }}">
 
     <!-- Header Nav -->
-    <div class="navbar navbar-inverse navbar-fixed-top {{ site.subsite }}">
+    <div class="navbar navbar-inverse navbar-fixed-top {{ site.subsite }}" role="navigation">
       <!-- Current Site -->
       <div class="navbar-header">
-        <a class="navbar-brand {{ site.subsite }}" href="{% if site.root %}{{ site.root }}{% else %}/{% endif %}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <!-- Collapse Button -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+
+        <a class="navbar-brand {{ site.subsite }}" href="{% if site.root %}{{ site.root }}{% else %}/{% endif %}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
       </div>
 
-      <div class="navbar-header nav-collapse navbar-right search">
+      <div class="collapse navbar-collapse" id="nav-collapse">
         <!-- Right side nav -->
-        <form class="navbar-form navbar-right" action="{{ site.root }}/search.html" method="GET">
+        <form class="navbar-form navbar-right visible-lg" action="{{ site.root }}/search.html" method="GET" role="search">
           <div class="form-group">
-            <input name="q" class="form-control" type="text" placeholder="Search">
+            <input name="q" class="form-control search" type="text" placeholder="Search">
           </div>
         </form>
-      </div>
 
-      <div class="nav-collapse">
         <!-- Nav elements -->
         <ul class="nav navbar-nav">
           {% include local-nav.html %}
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-flask"></i> Socrata Labs Network <i class="fa fa-caret-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="http://open-source.socrata.com"><i class="fa fa-heart"></i> Open Source</a></li>
-              <li><a href="http://dev.socrata.com"><i class="fa fa-code"></i> Developers</a></li>
-              <li><a href="http://hackathon-in-a-box.org"><i class="fa fa-dropbox"></i> Hackathon-in-a-Box </a></li>
-              <li><a href="http://communities.socrata.com"><i class="fa fa-group"></i> Community Data Portals</a></li>
-              <li><a href="http://www.socrata.com"><i class="fa fa-external-link"></i> www.socrata.com</a></li>
-            <ul>
-          </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -116,7 +107,7 @@
     </div> <!-- /container -->
 
     <!-- Bootstrap Javascript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -129,23 +120,6 @@
          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-     </script>
-
-     <!-- Zendesk -->
-     <script type="text/javascript" src="//asset0.zendesk.com/external/zenbox/v2.1/zenbox.js"></script>
-     <style type="text/css" media="screen, projection">
-       @import url(//asset0.zendesk.com/external/zenbox/v2.1/zenbox.css);
-     </style>
-     <script type="text/javascript">
-       if (typeof(Zenbox) !== "undefined") {
-         Zenbox.init({
-           dropboxID:   "15859",
-           url:         "https://socrata.zendesk.com",
-           tabID:       "support",
-           tabColor:    "#333333",
-           tabPosition: "Right"
-         });
-       }
      </script>
   </body>
 </html>
