@@ -40,7 +40,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/common/ico/apple-touch-icon-144-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/common/ico/apple-touch-icon-114-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/common/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="/common/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="/common/ico/favicon.png"/>
   </head>
 
@@ -120,6 +119,12 @@
          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-     </script>
+    </script>
+
+    <!-- Global Bootstrap Goodness -->
+    <script type="text/javascript">
+      // Activate all our tooltips
+      $(".has-tooltip").tooltip();
+    </script>
   </body>
 </html>
