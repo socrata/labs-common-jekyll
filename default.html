@@ -76,15 +76,6 @@
     </div>
 
     <div class="container-fluid content">
-      {% if site.debug %}
-        <ul class="debug">
-          <li><em>status:</em> <span class="{{ page.status }}">{{ page.status }}</span></li>
-          <li><em>layout:</em> {{ page.layout }}</li>
-          <li><em>path:</em> {{ page.path }}</li>
-          {% if page.comment %}<li><em>Comment:</em> {{ page.comment }}</li>{% endif %}
-        </ul>
-      {% endif %}
-
       {% if site.splash %}
         <div class="splash">
           {% include splash.html %}
