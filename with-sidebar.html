@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1 id="title">{{ page.title }}</h1>
 
 <div class="row with-sidebar">
   <div class="col-md-3 hidden-phone">
@@ -14,5 +14,8 @@ layout: default
   </div><!--/span-->
   <div class="col-md-9">
     {{ content }}
+
+    <div class="related-pages"></div>
   </div><!--/span-->
 </div><!--/row-->
+
