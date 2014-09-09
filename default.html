@@ -70,6 +70,10 @@
 
         <!-- Nav elements -->
         <ul class="nav navbar-nav">
+          <li id="socrata-status" style="display: none">
+            <button type="button" class="btn" data-toggle="popover" data-placement="auto" data-html="true"></button>
+          </li>
+
           {% include local-nav.html %}
         </ul>
       </div><!--/.nav-collapse -->
@@ -127,6 +131,9 @@
       // Activate all our tooltips
       $(".has-tooltip").tooltip();
     </script>
+
+    <!-- Include Socrata Status on every site -->
+    <script type="text/javascript" src="/common/js/socrata-status.js"></script>
 
     {% for script in page.custom_js %}
     <script type="text/javascript" src="{{ script }}"></script>
