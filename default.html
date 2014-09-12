@@ -134,6 +134,10 @@
 
     <!-- Include Socrata Status on every site -->
     <script type="text/javascript" src="/common/js/socrata-status.js"></script>
+    
+    {% for script in site.local_js %}
+    <script type="text/javascript" src="{{ script }}"></script>
+    {% endfor %}
 
     {% for script in page.custom_js %}
     <script type="text/javascript" src="{{ script }}"></script>
