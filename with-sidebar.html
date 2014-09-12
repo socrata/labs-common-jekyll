@@ -7,6 +7,18 @@ layout: default
 <div class="row with-sidebar">
   <div class="col-md-3 hidden-phone">
     <div class="well sidebar-nav">
+      {% if page.author %}
+        <div class="author" data-author="{{ page.author }}" style="display: none">
+          <a href="#" class="profile-link"><img src="" class="avatar img-rounded" height="190" width="190"/></a>
+
+          <h3><a class="fullname" href="#" class="profile-link"></a></h3>
+          <h4><a class="username" href="#" class="profile-link"></a></h4>
+
+          <ul class="meta"></ul>
+          <hr/>
+        </div>
+      {% endif %}
+        
       <ul class="nav nav-list">
         {% include sidebar.html type=page.sidebar %}
       </ul>
