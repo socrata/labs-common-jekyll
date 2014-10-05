@@ -8,4 +8,11 @@ layout: default
 
 <!-- Search plugin: https://github.com/cobbler/jekyll-dynamic-search -->
 <script src="{{ site.root }}/common/js/search.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+// Load our search results
+$(function() {
+  var term = decodeURIComponent(get_param(window.location, "q")).replace("+", " ");
+  fetch_results(term);
+});
+</script>
 
