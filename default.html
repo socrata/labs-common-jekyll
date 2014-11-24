@@ -44,6 +44,8 @@
   </head>
 
   <body class="{{ site.subsite }} {{ page.bodyclass }}">
+    <!-- Path: "{{page.path }}" -->
+    <!-- URL: "{{page.url contains "/consumers/" }}" -->
 
     <!-- Header Nav -->
     <div class="navbar navbar-inverse navbar-fixed-top {{ site.subsite }}" role="navigation">
@@ -117,7 +119,8 @@
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', '{{ site.ga_tracking_code }}']);
-      _gaq.push(['_trackPageview']);
+      // Push the full URL with hashes
+      _gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
 
       (function() {
          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -134,7 +137,7 @@
 
     <!-- Include Socrata Status on every site -->
     <script type="text/javascript" src="/common/js/socrata-status.js"></script>
-    
+
     {% for script in site.local_js %}
     <script type="text/javascript" src="{{ script }}"></script>
     {% endfor %}
