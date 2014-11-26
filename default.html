@@ -133,8 +133,8 @@
     </script>
 
     <!-- Include Socrata Status on every site -->
-    <script type="text/javascript" src="/common/js/socrata-status.js"></script>
-    
+    <script type="text/javascript" src="{{ site.root }}/common/js/socrata-status.js"></script>
+
     {% for script in site.local_js %}
     <script type="text/javascript" src="{{ script }}"></script>
     {% endfor %}
