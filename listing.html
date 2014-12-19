@@ -10,7 +10,7 @@ layout: default
     </ul>
 
     <div class="links btn-group">
-      {% if page.download_url %}<button class="btn btn-default"><a href="{{ page.download_url }}" class="docs"><i class="fa fa-cloud-download"></i> Download</a></button>{% endif %}
+      {% if page.download_url %}<button class="btn btn-default"><a href="{{ listing.download_url }}" class="docs download" data-action="FME_template" data-label="Downloaded"><i class="fa fa-cloud-download"></i> Download</a></button>{% endif %}
       {% if page.github_url %}<button class="btn btn-default"><a href="{{ page.github_url }}" class="github"><i class="fa fa-github"></i> Github</a></button>{% endif %}
       {% if page.bugs_url %}<button class="btn btn-default"><a href="{{ page.bugs_url }}" class="issues"><i class="fa fa-exclamation-circle"></i> Issues</a></button>{% endif %}
     </div>
