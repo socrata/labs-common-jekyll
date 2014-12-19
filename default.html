@@ -139,11 +139,11 @@
     <script type="text/javascript" src="{{ site.root }}/common/js/socrata-status.js"></script>
 
     {% for script in site.local_js %}
-    <script type="text/javascript" src="{{ script }}"></script>
+      <script type="text/javascript" src="{{ site.root}}{{ script }}"></script>
     {% endfor %}
 
     {% for script in page.custom_js %}
-    <script type="text/javascript" src="{{ script }}"></script>
+      <script type="text/javascript" src="{{ site.root }}{{ script }}"></script>
     {% endfor %}
   </body>
 </html>
