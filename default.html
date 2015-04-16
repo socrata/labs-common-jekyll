@@ -21,6 +21,9 @@
     <link href="{{ site.root }}/common/css/common.css" rel="stylesheet"/>
     <link href="{{ site.root }}/common/css/murphy.css" rel="stylesheet"/>
     <link href="{{ site.root }}/css/local.css" rel="stylesheet"/>
+    {% for css in page.custom_css %}
+      <link href="{{ site.root }}{{ css }}" rel="stylesheet"/>
+    {% endfor %}
 
     <!-- Le jQuery & El Underscore -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
