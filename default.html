@@ -138,6 +138,11 @@
       $(".has-tooltip").tooltip();
     </script>
 
+    <!-- Dump in our site config -->
+    <script type="text/javascript">
+      var flags = {{ site.flags | replace: "=>", ":" }}
+    </script>
+
     <!-- Include Socrata Status on every site -->
     <script type="text/javascript" src="{{ site.root }}/common/js/socrata-status.js"></script>
 
