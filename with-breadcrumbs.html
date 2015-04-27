@@ -4,7 +4,7 @@ layout: default
 
 <ul class="breadcrumb">
   {% for path in page.parent_paths %}
-  <li><a href="{{ path }}">{{ page.parents[forloop.index0] }}</a> <span class="divider">/</span></li>
+  <li><a href="{{ path }}">{{ page.parents[forloop.index0] }}</a> <span class="divider"></span></li>
   {% endfor %}
   <li class="active">{{ page.title }}</li>
 </ul>
