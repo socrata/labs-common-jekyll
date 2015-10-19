@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le Bootstrap-->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome by Dave Gandy - http://fontawesome.io/ -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"/>
@@ -25,20 +25,28 @@
       <link href="{{ site.root }}{{ css }}" rel="stylesheet"/>
     {% endfor %}
 
-    <!-- Le jQuery & El Underscore -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js" type="text/javascript" charset="utf-8"></script>
-
-    <!-- Humane date plugin -->
-    <script type="text/javascript" charset="utf-8" src="{{ site.root }}/common/js/humane.js"></script>
-
-    <!-- D3 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Require.js is either the best thing to ever happen to me or my worst enemy -->
+    <script src="{{ site.root }}/common/js/require.js"></script>
+    {% if site.xrayquire %}<script src="{{ site.root }}/common/js/xrayquire.js"></script>{% endif %}
+    <script>
+      // Load common code and custom includes
+      requirejs(['{{ site.root }}/common/js/common.js'], function(common) {
+        // Site scripts
+        {% for script in site.custom_js %}
+          requirejs(['{{ script }}']);
+        {% endfor %}
+
+        // Page scripts
+        {% for script in page.custom_js %}
+          requirejs(['{{ script }}']);
+        {% endfor %}
+      });
+    </script>
 
     <!-- Browser Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/common/ico/apple-touch-icon-144-precomposed.png"/>
@@ -105,53 +113,9 @@
       </footer>
     </div> <!-- /container -->
 
-    <!-- Bootstrap Javascript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-    <!-- NY Times Emphasis -->
-    <script type="text/javascript" charset="utf-8" src="{{ site.root }}/common/js/emphasis.js"></script>
-
-    <!-- ZeroClipboard -->
-    <script type="text/javascript" charset="utf-8" src="{{ site.root }}/common/js/ZeroClipboard.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{{ site.root }}/common/js/clipboard.js"></script>
-
-    <!-- Related Pages -->
-    <script type="text/javascript" charset="utf-8" src="{{ site.root }}/common/js/related.js"></script>
-
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{ site.ga_tracking_code }}']);
-      // Push the full URL with hashes
-      _gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
-
-      (function() {
-         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-
-    <!-- Global Bootstrap Goodness -->
-    <script type="text/javascript">
-      // Activate all our tooltips
-      $(".has-tooltip").tooltip();
-    </script>
-
     <!-- Dump in our site config -->
     <script type="text/javascript">
       var flags = {{ site.flags | replace: "=>", ":" }}
     </script>
-
-    <!-- Include Socrata Status on every site -->
-    <script type="text/javascript" src="{{ site.root }}/common/js/socrata-status.js"></script>
-
-    {% for script in site.local_js %}
-      <script type="text/javascript" src="{{ site.root}}{{ script }}"></script>
-    {% endfor %}
-
-    {% for script in page.custom_js %}
-      <script type="text/javascript" src="{{ site.root }}{{ script }}"></script>
-    {% endfor %}
   </body>
 </html>
