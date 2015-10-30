@@ -1,14 +1,14 @@
 ---
 layout: default
+custom_js:
+- /common/js/lib/404.js
 ---
 
 <h1 class="text-center">You look lost...</h1>
 
-<a href="http://snuffleupadata.com"><img alt="snuffleupadata" class="center-block" src="/common/img/snuffleupadata.png" /></a>
+<a href="http://snuffleupadata.com"><img alt="snuffleupadata" class="center-block" src="/common/img/question.png" /></a>
 
 <p class="text-center">Perhaps <a class="search" href="#">this search</a> will get you closer?</p>
 
 <script type="text/javascript">
-  // Lame, I know, but it's just a 404 page
-  $(".search").attr("href", "/search.html?q=" + window.location.pathname.replace(/^\//, "").replace(/\.html/, "").split(/[.-\/]/).join("+"));
 </script>
