@@ -25,6 +25,15 @@ layout: default
     </div><!--/.well -->
   </div><!--/span-->
   <div class="col-md-9">
+    {% if page.parent_paths && page.parents %}
+      <ul class="breadcrumb">
+        {% for path in page.parent_paths %}
+          <li><a href="{{ path }}">{{ page.parents[forloop.index0] }}</a> <span class="divider"></span></li>
+        {% endfor %}
+        <li class="active">{{ page.title }}</li>
+      </ul>
+    {% endif %}
+
     {{ content }}
 
     <div class="related-pages"></div>
