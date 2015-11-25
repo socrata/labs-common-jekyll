@@ -39,17 +39,24 @@
     <script>
       // Load common code and custom includes
       requirejs(['{{ site.root }}/common/js/common.js'], function(common) {
+        var rel_require = function(script) {
+          if(script.match(/^\/[^\/]/)) {
+            script = '{{ site.root }}'  + script;
+          }
+
+          requirejs([script]);
+        };
         // Site scripts
         {% for script in site.custom_js %}
-          requirejs(['{{ script }}']);
+          rel_require('{{ script }}');
         {% endfor %}
 
         // Page scripts
         {% for script in page.layout_js %}
-          requirejs(['{{ script }}']);
+          rel_require('{{ script }}');
         {% endfor %}
         {% for script in page.custom_js %}
-          requirejs(['{{ script }}']);
+          rel_require('{{ script }}');
         {% endfor %}
       });
     </script>
@@ -122,9 +129,11 @@
       </footer>
     </div> <!-- /container -->
 
-    <!-- Dump in our site config -->
-    <script type="text/javascript">
-      var flags = {{ site.flags | replace: "=>", ":" }}
-    </script>
+    {% if site.flags %}
+      <!-- Dump in our site config -->
+      <script type="text/javascript">
+          var flags = {{ site.flags | replace: "=>", ":" }}
+      </script>
+    {% endif %}
   </body>
 </html>
