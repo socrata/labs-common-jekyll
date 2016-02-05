@@ -2,11 +2,21 @@
 layout: default
 ---
 
-<ul class="breadcrumb">
+<ul vocab="http://schema.org" typeof="BreadcrumbList" class="breadcrumb">
   {% for path in page.parent_paths %}
-  <li><a href="{{ path }}">{{ page.parents[forloop.index0] }}</a> <span class="divider"></span></li>
+    <li property="itemListElement" typeof="ListItem">
+      <a property="item" typeof="WebPage" href="{{ path }}">
+        <span property="name">{{ page.parents[forloop.index0] }}</span>
+      </a> 
+      <meta property="position" content="{{forloop.index}}" />
+      <span class="divider"></span></li>
   {% endfor %}
-  <li class="active">{{ page.title }}</li>
+  <li property="itemListElement" typeof="ListItem" class="active">
+    <span property="item" typeof="WebPage">
+      <span property="name">{{ page.title }}</span>
+    </span>
+    <meta property="position" content="{{ page.parent_paths | size | plus: 1 }}">
+  </li>
 </ul>
 
 <h1>{{ page.title }}</h1>
