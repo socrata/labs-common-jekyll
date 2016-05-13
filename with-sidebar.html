@@ -1,7 +1,5 @@
 ---
 layout: default
-layout_js:
-- /js/github.js
 ---
 
 <h1 id="title">{{ page.title }}</h1>
@@ -10,19 +8,20 @@ layout_js:
   <div class="col-md-3 hidden-phone">
     <div class="well sidebar-nav">
       {% if page.author %}
-        <div class="author" data-author="{{ page.author }}" style="display: none">
+        <div class="author" data-author="{{ page.author }}">
           <a href="#" class="profile-link"><img alt="{{ page.author }}" src="/img/default_avatar.png" class="avatar img-rounded" height="190" width="190"/></a>
 
           <h3><a href="#" class="profile-link fullname"></a></h3>
-          <h4><a href="#" class="profile-link username"></a></h4>
+          <h4><a href="https://github.com/{{ page.author}}" class="profile-link username">{{ page.author }}</a></h4>
 
           <ul class="meta"></ul>
           <hr/>
         </div>
       {% endif %}
-        
-      <ul class="nav nav-list">
-        {% include sidebar.html type=page.sidebar %}
+
+      {% assign sidebar = page.sidebar | default: layout.sidebar %}
+      <ul class="nav nav-list sidebar {{sidebar}}">
+        {% include sidebar.html type=sidebar %}
       </ul>
     </div><!--/.well -->
   </div><!--/span-->

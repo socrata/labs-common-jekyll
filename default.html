@@ -71,11 +71,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.root }}/common/ico/apple-touch-icon-72-precomposed.png"/>
     <link rel="shortcut icon" href="{{ site.root }}/common/ico/favicon.png"/>
 
-    <!-- Changelog RSS -->
-    <link type="application/atom+xml" rel="alternate" href="https://dev.socrata.com/feed.xml" title="Socrata Developer Portal Changelog">
+    <!-- Blog RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://dev.socrata.com/feed.xml" title="Socrata Developer Blog">
   </head>
 
-  <body class="{{ site.subsite }} {{ page.bodyclass }}">
+  <body class="{{ site.subsite }} {{ page.bodyclass }} {{ page.name | split: "." | first }}">
     <!-- Path: "{{page.path }}" -->
     <!-- URL: "{{page.url contains "/consumers/" }}" -->
 
