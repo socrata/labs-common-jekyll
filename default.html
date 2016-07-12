@@ -24,11 +24,11 @@
     <!-- hljs highlighting -->
 
     <!-- CSS customizations -->
-    <link href="{{ site.root }}/common/css/common.css" rel="stylesheet"/>
-    <link href="{{ site.root }}/common/css/murphy.css" rel="stylesheet"/>
-    <link href="{{ site.root }}/css/local.css" rel="stylesheet"/>
+    <link href="{{ site.baseurl }}/common/css/common.css" rel="stylesheet"/>
+    <link href="{{ site.baseurl }}/common/css/murphy.css" rel="stylesheet"/>
+    <link href="{{ site.baseurl }}/css/local.css" rel="stylesheet"/>
     {% for css in page.custom_css %}
-      <link href="{{ site.root }}{{ css }}" rel="stylesheet"/>
+      <link href="{{ site.baseurl }}{{ css }}" rel="stylesheet"/>
     {% endfor %}
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -37,14 +37,14 @@
     <![endif]-->
 
     <!-- Require.js is either the best thing to ever happen to me or my worst enemy -->
-    <script src="{{ site.root }}/common/js/require.js"></script>
-    {% if site.xrayquire %}<script src="{{ site.root }}/common/js/xrayquire.js"></script>{% endif %}
+    <script src="{{ site.baseurl }}/common/js/require.js"></script>
+    {% if site.xrayquire %}<script src="{{ site.baseurl }}/common/js/xrayquire.js"></script>{% endif %}
     <script>
       // Load common code and custom includes
-      requirejs(['{{ site.root }}/common/js/common.js'], function(common) {
+      requirejs(['{{ site.baseurl }}/common/js/common.js'], function(common) {
         var rel_require = function(script) {
           if(script.match(/^\/[^\/]/)) {
-            script = '{{ site.root }}'  + script;
+            script = '{{ site.baseurl }}'  + script;
           }
 
           requirejs([script]);
@@ -91,12 +91,12 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand {{ site.subsite }}" href="{% if site.root %}{{ site.root }}/{% else %}/{% endif %}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
+        <a class="navbar-brand {{ site.subsite }}" href="{% if site.root %}{{ site.baseurl }}/{% else %}/{% endif %}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
       </div>
 
       <div class="collapse navbar-collapse" id="nav-collapse">
         <!-- Right side nav -->
-        <form class="navbar-form navbar-right visible-lg" action="{{ site.root }}/search.html" method="GET" role="search">
+        <form class="navbar-form navbar-right visible-lg" action="{{ site.baseurl }}/search.html" method="GET" role="search">
           <div class="form-group">
             <input name="q" class="form-control search" type="text" placeholder="Search">
           </div>
