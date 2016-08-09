@@ -81,36 +81,38 @@
 
     <!-- Header Nav -->
     <div class="navbar navbar-inverse navbar-fixed-top {{ site.subsite }}" role="navigation">
-      <!-- Current Site -->
-      <div class="navbar-header">
-        <!-- Collapse Button -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+      <div class="container">
+        <!-- Current Site -->
+        <div class="navbar-header">
+          <!-- Collapse Button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
-        <a class="navbar-brand {{ site.subsite }}" href="{% if site.root %}{{ site.baseurl }}/{% else %}/{% endif %}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
+          <a class="navbar-brand {{ site.subsite }}" href="{% if site.root %}{{ site.baseurl }}/{% else %}/{% endif %}"><i class="{{ site.icon }}"></i> {{ site.title}}</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <!-- Right side nav -->
+          <form class="navbar-form navbar-right visible-lg" action="{{ site.baseurl }}/search.html" method="GET" role="search">
+            <div class="form-group">
+              <input name="q" class="form-control search" type="text" placeholder="Search">
+            </div>
+          </form>
+
+          <!-- Nav elements -->
+          <ul class="nav navbar-nav">
+            <li id="socrata-status" style="display: none">
+              <button type="button" class="btn" data-toggle="popover" data-placement="bottom" data-html="true"></button>
+            </li>
+
+            {% include local-nav.html %}
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-
-      <div class="collapse navbar-collapse" id="nav-collapse">
-        <!-- Right side nav -->
-        <form class="navbar-form navbar-right visible-lg" action="{{ site.baseurl }}/search.html" method="GET" role="search">
-          <div class="form-group">
-            <input name="q" class="form-control search" type="text" placeholder="Search">
-          </div>
-        </form>
-
-        <!-- Nav elements -->
-        <ul class="nav navbar-nav">
-          <li id="socrata-status" style="display: none">
-            <button type="button" class="btn" data-toggle="popover" data-placement="bottom" data-html="true"></button>
-          </li>
-
-          {% include local-nav.html %}
-        </ul>
-      </div><!--/.nav-collapse -->
     </div>
 
     <div class="container-fluid content">
