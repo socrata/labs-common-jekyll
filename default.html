@@ -65,6 +65,11 @@
       });
     </script>
 
+    <!-- Custom non-RequireJS dependencies -->
+    {% for script in page.custom_deps %}
+      <script src="{{ script }}"></script>
+    {% endfor %}
+
     <!-- Browser Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.root }}/common/ico/apple-touch-icon-144-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.root }}/common/ico/apple-touch-icon-114-precomposed.png"/>
