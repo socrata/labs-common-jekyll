@@ -110,13 +110,17 @@
 
           <!-- Nav elements -->
           <ul class="nav navbar-nav">
-            <li id="socrata-status" style="display: none">
-              <button type="button" class="btn" data-toggle="popover" data-placement="bottom" data-html="true"></button>
-            </li>
-
             {% include local-nav.html %}
           </ul>
         </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div id="socrata-status" class="alert" style="display: none;">
+      <div class="container">
+        <i class="fa fa-warning"></i>
+        <strong><span class="message"></span></strong>:
+        For more information see <a href="http://status.socrata.com">status.socrata.com</a>.
       </div>
     </div>
 
