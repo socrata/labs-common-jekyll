@@ -21,13 +21,18 @@
     <link href="//fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"/>
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css" rel="stylesheet"/>
 
-    <!-- hljs highlighting -->
-
     <!-- CSS customizations -->
     <link href="{{ site.baseurl }}/common/css/common.css" rel="stylesheet"/>
     <link href="{{ site.baseurl }}/common/css/murphy.css" rel="stylesheet"/>
     <link href="{{ site.baseurl }}/css/local.css" rel="stylesheet"/>
+
+    <!-- Page-level Customizations -->
     {% for css in page.custom_css %}
+      <link href="{{ site.baseurl }}{{ css }}" rel="stylesheet"/>
+    {% endfor %}
+
+    <!-- Site-level Customizations -->
+    {% for css in site.custom_css %}
       <link href="{{ site.baseurl }}{{ css }}" rel="stylesheet"/>
     {% endfor %}
 
