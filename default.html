@@ -16,6 +16,17 @@
     <!-- Featherlight Lightbox -->
     <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.4/release/featherlight.min.css" rel="stylesheet"/>
 
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
     <!-- Google Web Fonts -->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css"/>
     <link href="//fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"/>
@@ -87,7 +98,7 @@
 
   <body class="{{ site.subsite }} {{ page.bodyclass }} {{ page.name | split: "." | first }}">
     <!-- Path: "{{page.path }}" -->
-    
+
 
     <!-- Header Nav -->
     <div class="navbar navbar-inverse navbar-fixed-top {{ site.subsite }}" role="navigation">
