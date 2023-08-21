@@ -3,3 +3,25 @@ layout: default
 ---
 
 {{ content }}
+
+<script type="text/javascript">
+  function attachStylesToElement(element, styles) {
+    const style = document.createElement('style');
+    style.innerHTML = styles;
+    element.shadowRoot.appendChild(style);
+  }
+
+  window.addEventListener('load', () => {
+    const element = document.getElementsByTagName('openapi-explorer')[0];
+    if (element) {
+      attachStylesToElement(element, `
+        nav.nav-bar.focused {
+          border: 1px solid #e3e3e3;
+          border-radius: 4px;
+          padding: 19px;
+          padding-top: 0;
+        }
+      `);
+    }
+  });
+</script>
