@@ -2,7 +2,12 @@
 layout: default
 ---
 
-{{ content }}
+<openapi-explorer
+  spec-url="{{ page.spec_url }}"
+  enable-console="false"
+  show-authentication="false"
+  show-server-selection="false"
+  > </openapi-explorer>
 
 <script type="text/javascript">
   function attachStylesToElement(element, styles) {
